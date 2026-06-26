@@ -1,2 +1,2 @@
 # DSA
-A repo of my coding DSA solutions
+A comprehensive collection of my DSA solutions, showcasing problem-solving techniques and algorithmic approaches.
