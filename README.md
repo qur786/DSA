@@ -1,39 +1,51 @@
 <div align="center">
 
-# 🚀 Data Structures & Algorithms
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=DSA%20Journey&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=ffffff" width="100%" />
 
-*My personal repository for tracking problem-solving progress across multiple competitive programming platforms.*
+### 🧠 Algorithmic Problem Solving & Data Structures
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/qur786/DSA?style=flat-square&color=5D6D7E)](https://github.com/qur786/DSA/commits/main)
-[![Auto-Update Workflow](https://img.shields.io/github/actions/workflow/status/qur786/DSA/update-readme.yml?branch=main&label=Auto-Counter&style=flat-square&color=2ECC71)](https://github.com/qur786/DSA/actions)
-[![Languages](https://img.shields.io/badge/Languages-C%2B%2B%20%7C%20Javascript%20%7C%20Python-blue?style=flat-square)](#)
+*A curated collection of optimal solutions tracking my progress across competitive programming platforms.*
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/qur786/DSA?style=for-the-badge&color=2a313c&logo=github)](https://github.com/qur786/DSA/commits/main)
+[![Auto-Update Workflow](https://img.shields.io/github/actions/workflow/status/qur786/DSA/update-readme.yml?branch=main&label=Auto-Counter&style=for-the-badge&color=2ea043&logo=githubactions&logoColor=white)](https://github.com/qur786/DSA/actions)
+[![Languages](https://img.shields.io/badge/Stack-C%2B%2B%20%7C%20JS%2FTS-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://github.com/qur786/DSA)
 
 </div>
 
-<br />
 
-## 📊 Progress Tracker
+
+## 📈 Automated Progress Tracker
 
 
 <div align="center">
 
 <!-- dsa-counts-start -->
-| Platform | Solved Count |
-| --- | --- |
-| LeetCode | 157 |
-| GeeksforGeeks | 1 |
-| CSES | 0 |
-| **Total** | **158** |
-
+<!-- The script will auto-inject the table here -->
 <!-- dsa-counts-end -->
 
 </div>
 
-<br />
 
-## 📂 Repository Structure
 
-Solutions are organized strictly by platform, followed by the problem name or number. Each directory typically contains the question in README.md file, solution files for each successful attempts.
+## 🎯 Platforms
+
+<p align="center">
+  <a href="https://leetcode.com/">
+    <img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" />
+  </a>
+  <a href="https://www.geeksforgeeks.org/">
+    <img src="https://img.shields.io/badge/-GeeksforGeeks-2F8D46?style=for-the-badge&logo=GeeksforGeeks&logoColor=white" alt="GeeksforGeeks" />
+  </a>
+  <a href="https://cses.fi/problemset/">
+    <img src="https://img.shields.io/badge/-CSES-1A2C34?style=for-the-badge&logo=codeforces&logoColor=white" alt="CSES" />
+  </a>
+</p>
+
+
+
+## 📁 Architecture & Organization
+
+Solutions are organized strictly by platform, utilizing dedicated folders for each problem to encapsulate problem and the solution file.
 
 ```text
 📦 dsa-journey
