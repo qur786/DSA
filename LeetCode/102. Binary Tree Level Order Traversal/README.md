@@ -1,5 +1,7 @@
 # 102. Binary Tree Level Order Traversal
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Given the <code>root</code> of a binary tree, return <em>the level order traversal of its nodes' values</em>. (i.e., from left to right, level by level).</p>
