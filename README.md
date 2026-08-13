@@ -26,17 +26,14 @@
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode"/><br>
         <h2>🔥 157</h2>
-        <b>Solved</b>
       </td>
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-GeeksforGeeks-2F8D46?style=for-the-badge&logo=GeeksforGeeks&logoColor=white" alt="GeeksforGeeks"/><br>
         <h2>💻 1</h2>
-        <b>Solved</b>
       </td>
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-CSES-1A2C34?style=for-the-badge&logo=codeforces&logoColor=white" alt="CSES"/><br>
         <h2>🧩 0</h2>
-        <b>Solved</b>
       </td>
     </tr>
   </table>
