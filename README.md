@@ -6,9 +6,9 @@
 
 *A curated collection of optimal solutions tracking my progress across competitive programming platforms.*
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/qur786/your-repo-name?style=for-the-badge&color=2a313c&logo=github)](https://github.com/qur786/your-repo-name/commits/main)
-[![Auto-Update Workflow](https://img.shields.io/github/actions/workflow/status/qur786/your-repo-name/update-readme.yml?branch=main&label=Auto-Counter&style=for-the-badge&color=2ea043&logo=githubactions&logoColor=white)](https://github.com/qur786/your-repo-name/actions)
-[![Languages](https://img.shields.io/badge/Stack-C%2B%2B%20%7C%20JS%2FTS-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://github.com/qur786/your-repo-name)
+[![GitHub last commit](https://img.shields.io/github/last-commit/qur786/DSA?style=for-the-badge&color=2a313c&logo=github)](https://github.com/qur786/DSA/commits/main)
+[![Auto-Update Workflow](https://img.shields.io/github/actions/workflow/status/qur786/DSA/update-readme.yml?branch=main&label=Auto-Counter&style=for-the-badge&color=2ea043&logo=githubactions&logoColor=white)](https://github.com/qur786/DSA/actions)
+[![Languages](https://img.shields.io/badge/Stack-C%2B%2B%20%7C%20JS%2FTS-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://github.com/qur786/DSA)
 
 </div>
 
@@ -25,6 +25,21 @@
 <!-- dsa-counts-end -->
 
 </div>
+
+
+## 🎯 Platforms
+
+<p align="center">
+  <a href="https://leetcode.com/">
+    <img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" />
+  </a>
+  <a href="https://www.geeksforgeeks.org/">
+    <img src="https://img.shields.io/badge/-GeeksforGeeks-2F8D46?style=for-the-badge&logo=GeeksforGeeks&logoColor=white" alt="GeeksforGeeks" />
+  </a>
+  <a href="https://cses.fi/problemset/">
+    <img src="https://img.shields.io/badge/-CSES-1A2C34?style=for-the-badge&logo=codeforces&logoColor=white" alt="CSES" />
+  </a>
+</p>
 
 
 
@@ -49,7 +64,7 @@
     <td align="center" width="50%">
       <b>LeetCode</b><br><br>
       <a href="https://leetcode.com/qur-x100/">
-        <img src="https://leetcard.jacoblin.cool/qur786?theme=dark&font=Syne&ext=heatmap" alt="LeetCode Stats & Heatmap" width="100%" />
+        <img src="https://leetcard.jacoblin.cool/qur-x100?theme=dark&font=Syne&ext=heatmap" alt="LeetCode Stats & Heatmap" width="100%" />
       </a>
     </td>
     <td align="center" width="50%">
