@@ -16,7 +16,6 @@
 
 ## 📈 Automated Progress Tracker
 
-> **Note:** The metrics below are automatically generated and updated via a custom Node.js script running on GitHub Actions. It dynamically counts every distinct problem folder.
 
 <div align="center">
 
