@@ -6,7 +6,7 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/qur786/DSA?style=flat-square&color=5D6D7E)](https://github.com/qur786/DSA/commits/main)
 [![Auto-Update Workflow](https://img.shields.io/github/actions/workflow/status/qur786/DSA/update-readme.yml?branch=main&label=Auto-Counter&style=flat-square&color=2ECC71)](https://github.com/qur786/DSA/actions)
-[![Languages](https://img.shields.io/badge/Languages-C%2B%2B%20%7C%20Python-blue?style=flat-square)](#)
+[![Languages](https://img.shields.io/badge/Languages-C%2B%2B%20%7C%20Javascript20%7C%20Python-blue?style=flat-square)](#)
 
 </div>
 
