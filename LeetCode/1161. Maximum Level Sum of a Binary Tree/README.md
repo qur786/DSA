@@ -1,5 +1,7 @@
 # 1161. Maximum Level Sum of a Binary Tree
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Given the <code>root</code> of a binary tree, the level of its root is <code>1</code>, the level of its children is <code>2</code>, and so on.</p>
