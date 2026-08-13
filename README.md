@@ -18,7 +18,13 @@
 <div align="center">
 
 <!-- dsa-counts-start -->
-<!-- The script will auto-inject the table here -->
+| Platform | Solved Count |
+| --- | --- |
+| LeetCode | 157 |
+| GeeksforGeeks | 1 |
+| CSES | 0 |
+| **Total** | **158** |
+
 <!-- dsa-counts-end -->
 
 </div>
