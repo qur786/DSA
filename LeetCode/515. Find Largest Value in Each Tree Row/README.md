@@ -1,5 +1,7 @@
 # 515. Find Largest Value in Each Tree Row
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Given the <code>root</code> of a binary tree, return <em>an array of the largest value in each row</em> of the tree <strong>(0-indexed)</strong>.</p>
