@@ -49,11 +49,10 @@ platforms.forEach(platform => {
     
     totalSolved += count;
 
-    // Generate a visual "card" for each platform inside the table cells
+    // Generate a visual "card" for each platform without the extra text
     htmlContent += `      <td align="center" width="220">\n`;
     htmlContent += `        <img src="https://img.shields.io/badge/-${platform.folder}-${platform.color}?style=for-the-badge&logo=${platform.logo}&logoColor=${platform.logoColor}" alt="${platform.folder}"/><br>\n`;
     htmlContent += `        <h2>${platform.emoji} ${count}</h2>\n`;
-    htmlContent += `        <b>Solved</b>\n`;
     htmlContent += `      </td>\n`;
 });
 
@@ -75,7 +74,7 @@ if (fs.existsSync(readmePath)) {
     readmeData = readmeData.replace(regex, `${startMarker}\n${htmlContent}\n${endMarker}`);
     
     fs.writeFileSync(readmePath, readmeData);
-    console.log('✨ README.md updated successfully with beautiful stats.');
+    console.log('✨ README.md updated successfully with beautiful, minimalist stats.');
 } else {
     console.error('❌ README.md not found in the root directory.');
     process.exit(1);
