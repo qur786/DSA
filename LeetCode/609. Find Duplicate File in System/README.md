@@ -1,5 +1,7 @@
 # 609. Find Duplicate File in System
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Given a list <code>paths</code> of directory info, including the directory path, and all the files with contents in this directory, return <em>all the duplicate files in the file system in terms of their paths</em>. You may return the answer in <strong>any order</strong>.</p>
