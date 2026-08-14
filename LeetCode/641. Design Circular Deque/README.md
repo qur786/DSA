@@ -1,5 +1,7 @@
 # 641. Design Circular Deque
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Design your implementation of the circular double-ended queue (deque).</p>
