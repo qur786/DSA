@@ -1,8 +1,10 @@
 # 49. Group Anagrams
 
+**Difficulty:** Medium
+
 ## Description
 
-<p>Given an array of strings <code>strs</code>, group the <span data-keyword="anagram" class=" cursor-pointer relative text-dark-blue-s text-sm"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_1l_" data-state="closed" class="">anagrams</button></span> together. You can return the answer in <strong>any order</strong>.</p>
+<p>Given an array of strings <code>strs</code>, group the <span data-keyword="anagram" class=" cursor-pointer relative text-dark-blue-s text-sm"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_s_" data-state="closed" class="">anagrams</button></span> together. You can return the answer in <strong>any order</strong>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
