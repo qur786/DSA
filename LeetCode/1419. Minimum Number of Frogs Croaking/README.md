@@ -1,5 +1,7 @@
 # 1419. Minimum Number of Frogs Croaking
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>You are given the string <code>croakOfFrogs</code>, which represents a combination of the string <code>"croak"</code> from different frogs, that is, multiple frogs can croak at the same time, so multiple <code>"croak"</code> are mixed.</p>
