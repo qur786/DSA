@@ -1,5 +1,7 @@
 # 150. Evaluate Reverse Polish Notation
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>You are given an array of strings <code>tokens</code> that represents an arithmetic expression in a <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation" target="_blank">Reverse Polish Notation</a>.</p>
