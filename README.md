@@ -25,7 +25,7 @@
     <tr>
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode"/><br>
-        <h2>🔥 162</h2>
+        <h2>🔥 161</h2>
       </td>
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-GeeksforGeeks-2F8D46?style=for-the-badge&logo=GeeksforGeeks&logoColor=white" alt="GeeksforGeeks"/><br>
@@ -38,7 +38,7 @@
     </tr>
   </table>
   <br>
-  <img src="https://img.shields.io/badge/Total_Problems_Solved-163-00599C?style=for-the-badge&logo=codeforces&logoColor=white" alt="Total Solved" />
+  <img src="https://img.shields.io/badge/Total_Problems_Solved-162-00599C?style=for-the-badge&logo=codeforces&logoColor=white" alt="Total Solved" />
 </div>
 <!-- dsa-counts-end -->
 
