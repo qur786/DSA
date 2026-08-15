@@ -11,16 +11,26 @@ on:
       - 'CSES/**'
       - 'update_counts.js'
 
+# Only allow one instance of this workflow for the same branch.
+# A newer push cancels the previous pending/running workflow.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Wait for 5 minutes
+        run: sleep 300
+
       - name: Checkout Repository
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,8 +43,10 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
+
           git add README.md
-          # The exit 0 ensures the workflow doesn't fail if there's nothing new to commit
+
+          # Don't fail if there is nothing to commit
           git commit -m "docs: auto-update DSA problem counts" || exit 0
+
           git push
