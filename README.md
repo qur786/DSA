@@ -33,12 +33,12 @@
       </td>
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-CSES-1A2C34?style=for-the-badge&logo=codeforces&logoColor=white" alt="CSES"/><br>
-        <h2>🧩 0</h2>
+        <h2>🧩 1</h2>
       </td>
     </tr>
   </table>
   <br>
-  <img src="https://img.shields.io/badge/Total_Problems_Solved-165-00599C?style=for-the-badge&logo=codeforces&logoColor=white" alt="Total Solved" />
+  <img src="https://img.shields.io/badge/Total_Problems_Solved-166-00599C?style=for-the-badge&logo=codeforces&logoColor=white" alt="Total Solved" />
 </div>
 <!-- dsa-counts-end -->
 
