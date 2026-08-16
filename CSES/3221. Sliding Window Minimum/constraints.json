@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "problem_number": 3221,
+  "title": "Sliding Window Minimum",
+  "source_url": "https://cses.fi/problemset/task/3221",
+  "limits": {
+    "time_seconds": 1.0,
+    "memory_mb": 512
+  },
+  "input": "The first line contains two integers n and k: the number of elements and the size of the window.\n\nThe next line contains four integers x, a, b and c: the input generator parameters. The input is generated as follows:\n\n- x₁=x\n\n- xᵢ=(axᵢ-1+b) \\bmod c for i=2,3,…,n",
+  "output": "Print the xor of all window minimums.",
+  "constraints": "- 1 ≤ k ≤ n ≤ 10⁷\n\n- 0 ≤ x, a, b ≤ 10⁹\n\n- 1 ≤ c ≤ 10⁹",
+  "sections": {
+    "Input": "The first line contains two integers n and k: the number of elements and the size of the window.\n\nThe next line contains four integers x, a, b and c: the input generator parameters. The input is generated as follows:\n\n- x₁=x\n\n- xᵢ=(axᵢ-1+b) \\bmod c for i=2,3,…,n",
+    "Output": "Print the xor of all window minimums.",
+    "Constraints": "- 1 ≤ k ≤ n ≤ 10⁷\n\n- 0 ≤ x, a, b ≤ 10⁹\n\n- 1 ≤ c ≤ 10⁹",
+    "Example": "Input:\n\n```\n8 5\n3 7 1 11\n\n```\n\nOutput:\n\n```\n3\n\n```\n\nExplanation: The input array is [3,0,1,8,2,4,7,6]. The windows are [3,0,1,8,2], [0,1,8,2,4], [1,8,2,4,7] and [8,2,4,7,6], and their minimums are 0, 0, 1 and 2. Thus, the answer is 0 \\oplus 0 \\oplus 1 \\oplus 2 = 3."
+  }
+}
