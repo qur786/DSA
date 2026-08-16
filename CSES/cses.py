@@ -1408,17 +1408,14 @@ def cmd_run(problem_no, solution_no=None, language=DEFAULT_LANGUAGE):
             status = f"{GREEN}PASS{RESET}" if success else f"{RED}FAIL{RESET}"
             print(f"  Test {idx:>3}: [{status}]", end="")
 
-            if not success:
-                inp_preview = (
+            inp_preview = (
                     inp.strip().replace("\n", " | ").replace("\r", "")[:60]
                 )
-                print(f"\n          Input:    {DIM}{inp_preview}{RESET}")
-                print(f"          Expected: {GREEN}{exp[:80]}{RESET}")
-                print(f"          Got:      {RED}{actual[:80]}{RESET}")
-                if stderr:
+            print(f"\n          Input:    {DIM}{inp_preview}{RESET}")
+            print(f"          Expected: {GREEN}{exp[:80]}{RESET}")
+            print(f"          Got:      {GREEN if success else RED}{actual[:80]}{RESET}")
+            if stderr:
                     print(f"          Error:    {YELLOW}{stderr[:120]}{RESET}")
-            else:
-                print()
 
         total = passed + failed
         bar_pass = "#" * passed
