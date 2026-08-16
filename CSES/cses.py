@@ -1115,80 +1115,212 @@ def process_tree_rss_bytes(pid):
         return 0
 
 
+
+def classify_execution_result(
+    *,
+    returncode,
+    stdout,
+    stderr,
+    memory_exceeded,
+    timed_out,
+    memory_limit_mb,
+):
+    """Classify a solution process result as OK, TLE, MLE, or RUNTIME ERROR."""
+    stdout = stdout or ""
+    stderr = stderr or ""
+
+    if memory_exceeded:
+        return "MLE"
+
+    combined_error = f"{stderr}\n{stdout}".lower()
+
+    memory_error_patterns = (
+        "std::bad_alloc",
+        "bad_alloc",
+        "std::bad_array_new_length",
+        "cannot allocate memory",
+        "cannot allocate memory block",
+        "failed to allocate memory",
+        "memory allocation failed",
+        "out of memory",
+        "not enough memory",
+        "unable to allocate",
+        "malloc failed",
+    )
+
+    if memory_limit_mb is not None and any(
+        pattern in combined_error
+        for pattern in memory_error_patterns
+    ):
+        return "MLE"
+
+    if timed_out:
+        return "TLE"
+
+    return "OK" if returncode == 0 else "RUNTIME ERROR"
+
 def execute_with_limits(command, input_data, time_limit, memory_limit_mb):
-    """Run one test while enforcing wall-clock and RSS limits cross-platform."""
+    """
+    Run one test with wall-clock and RSS memory monitoring.
+
+    stdin/stdout/stderr are file-backed to avoid pipe deadlocks while stopping
+    timed-out or memory-limited processes.
+    """
     if memory_limit_mb is not None and psutil is None:
         raise RuntimeError(
             "Memory-limit enforcement requires the 'psutil' package. "
             "Install it with: python -m pip install psutil"
         )
 
-    process = subprocess.Popen(
-        command,
-        stdin=subprocess.PIPE,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-    )
-
+    input_path = stdout_path = stderr_path = None
+    process = None
+    monitor = None
     memory_exceeded = threading.Event()
     stop_monitor = threading.Event()
-
-    def monitor_memory():
-        limit_bytes = memory_limit_mb * 1024 * 1024
-        while not stop_monitor.wait(0.01):
-            if process.poll() is not None:
-                return
-            rss = process_tree_rss_bytes(process.pid)
-            if rss > limit_bytes:
-                memory_exceeded.set()
-                terminate_process_tree(process)
-                return
-
-    monitor = None
-    if memory_limit_mb is not None:
-        monitor = threading.Thread(target=monitor_memory, daemon=True)
-        monitor.start()
-
+    timed_out = False
     started = time.monotonic()
+
     try:
-        stdout, stderr = process.communicate(
-            input=input_data,
-            timeout=time_limit,
-        )
-        elapsed = time.monotonic() - started
-    except subprocess.TimeoutExpired:
-        terminate_process_tree(process)
-        stdout, stderr = process.communicate()
-        elapsed = time.monotonic() - started
-        stop_monitor.set()
-        if monitor:
-            monitor.join(timeout=0.2)
-        return {
-            "status": "TLE",
-            "stdout": stdout or "",
-            "stderr": stderr or "Time Limit Exceeded",
-            "elapsed_seconds": elapsed,
-            "returncode": process.returncode,
-        }
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            delete=False,
+            suffix=".cses.stdin",
+        ) as input_file:
+            input_file.write(input_data)
+            input_path = input_file.name
+
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            delete=False,
+            suffix=".cses.stdout",
+        ) as stdout_file:
+            stdout_path = stdout_file.name
+
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            delete=False,
+            suffix=".cses.stderr",
+        ) as stderr_file:
+            stderr_path = stderr_file.name
+
+        with (
+            open(input_path, "r", encoding="utf-8") as stdin_file,
+            open(stdout_path, "w", encoding="utf-8") as stdout_file,
+            open(stderr_path, "w", encoding="utf-8") as stderr_file,
+        ):
+            process = subprocess.Popen(
+                command,
+                stdin=stdin_file,
+                stdout=stdout_file,
+                stderr=stderr_file,
+                text=True,
+            )
+
+            def monitor_memory():
+                if memory_limit_mb is None:
+                    return
+
+                limit_bytes = memory_limit_mb * 1024 * 1024
+
+                while not stop_monitor.wait(0.01):
+                    if process.poll() is not None:
+                        return
+
+                    if process_tree_rss_bytes(process.pid) > limit_bytes:
+                        memory_exceeded.set()
+                        terminate_process_tree(process)
+                        return
+
+            if memory_limit_mb is not None:
+                monitor = threading.Thread(
+                    target=monitor_memory,
+                    daemon=True,
+                )
+                monitor.start()
+
+            try:
+                process.wait(timeout=time_limit)
+            except subprocess.TimeoutExpired:
+                if process.poll() is None:
+                    timed_out = True
+                    terminate_process_tree(process)
+
+                    try:
+                        process.wait(timeout=1)
+                    except subprocess.TimeoutExpired:
+                        try:
+                            process.kill()
+                        except OSError:
+                            pass
+                        try:
+                            process.wait(timeout=1)
+                        except subprocess.TimeoutExpired:
+                            pass
+                else:
+                    process.wait()
+
+            elapsed = time.monotonic() - started
+
     finally:
         stop_monitor.set()
-        if monitor:
-            monitor.join(timeout=0.2)
+        if monitor is not None:
+            monitor.join(timeout=0.5)
 
-    if memory_exceeded.is_set():
+    def read_capture(path):
+        if not path:
+            return ""
+
+        try:
+            with open(
+                path,
+                "r",
+                encoding="utf-8",
+                errors="replace",
+            ) as f:
+                return f.read()
+        except OSError:
+            return ""
+
+    stdout = read_capture(stdout_path)
+    stderr = read_capture(stderr_path)
+
+    for path in (input_path, stdout_path, stderr_path):
+        if path:
+            try:
+                os.remove(path)
+            except OSError:
+                pass
+
+    if process is None:
         return {
-            "status": "MLE",
-            "stdout": stdout or "",
-            "stderr": stderr or "Memory Limit Exceeded",
-            "elapsed_seconds": elapsed,
-            "returncode": process.returncode,
+            "status": "RUNTIME ERROR",
+            "stdout": stdout,
+            "stderr": stderr or "Process could not be started.",
+            "elapsed_seconds": time.monotonic() - started,
+            "returncode": None,
         }
 
+    status = classify_execution_result(
+        returncode=process.returncode,
+        stdout=stdout,
+        stderr=stderr,
+        memory_exceeded=memory_exceeded.is_set(),
+        timed_out=timed_out,
+        memory_limit_mb=memory_limit_mb,
+    )
+
+    if status == "MLE" and not stderr:
+        stderr = "Memory Limit Exceeded"
+    elif status == "TLE" and not stderr:
+        stderr = "Time Limit Exceeded"
+
     return {
-        "status": "OK" if process.returncode == 0 else "RUNTIME ERROR",
-        "stdout": stdout or "",
-        "stderr": stderr or "",
+        "status": status,
+        "stdout": stdout,
+        "stderr": stderr,
         "elapsed_seconds": elapsed,
         "returncode": process.returncode,
     }
