@@ -25,9 +25,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Wait for 5 minutes
-        run: sleep 300
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
