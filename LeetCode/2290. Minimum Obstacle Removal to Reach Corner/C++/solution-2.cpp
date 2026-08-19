@@ -1,0 +1,38 @@
+class Solution {
+public:
+    int minimumObstacles(vector<vector<int>>& grid) {
+        int rows = grid.size(), cols = grid[0].size();
+        deque<pair<int, int>> nodes;
+        vector<vector<int>> dist(rows, vector<int>(cols, INT_MAX));
+        dist[0][0] = 0;
+        nodes.emplace_back(0, 0);
+        const int rowD[4] = {1, -1, 0, 0};
+        const int colD[4] = {0, 0, 1, -1};
+
+        while (!nodes.empty()) {
+            auto [x, y] = nodes.front();
+            nodes.pop_front();
+
+            if (x == rows - 1 && y == cols - 1)
+                return dist[x][y];
+
+            for (int d = 0; d < 4; d++) {
+                int adjX = x + rowD[d];
+                int adjY = y + colD[d];
+
+                if (0 <= adjX && adjX < rows && 0 <= adjY && adjY < cols) {
+                    int weight = grid[adjX][adjY];
+                    if (dist[x][y] + weight < dist[adjX][adjY]) {
+                        dist[adjX][adjY] = dist[x][y] + weight;
+                        if (weight)
+                            nodes.emplace_back(adjX, adjY);
+                        else
+                            nodes.emplace_front(adjX, adjY);
+                    }
+                }
+            }
+        }
+
+        return dist[rows - 1][cols - 1];
+    }
+};
