@@ -1,5 +1,7 @@
 # 142. Linked List Cycle II
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Given the <code>head</code> of a linked list, return <em>the node where the cycle begins. If there is no cycle, return </em><code>null</code>.</p>
