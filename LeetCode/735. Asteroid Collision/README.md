@@ -1,5 +1,7 @@
 # 735. Asteroid Collision
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>We are given an array <code>asteroids</code> of integers representing asteroids in a row. The indices of the asteroid in the array represent their relative position in space.</p>
