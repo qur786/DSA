@@ -1,5 +1,7 @@
 # 143. Reorder List
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>You are given the head of a singly linked-list. The list can be represented as:</p>
