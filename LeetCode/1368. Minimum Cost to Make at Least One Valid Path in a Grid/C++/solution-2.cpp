@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int minCost(vector<vector<int>>& grid) {
+        int rows = grid.size(), cols = grid[0].size();
+        if (rows == 1 && cols == 1)
+            return 0;
+
+        const int rowD[4] = {0, 0, 1, -1};
+        const int colD[4] = {1, -1, 0, 0};
+        deque<pair<int, int>> nodes;
+        nodes.emplace_back(0, 0);
+        vector<vector<int>> dist(rows, vector<int>(cols, INT_MAX));
+        dist[0][0] = 0;
+
+        while (!nodes.empty()) {
+
+            auto [x, y] = nodes.front();
+            nodes.pop_front();
+
+            if (x == rows - 1 && cols == -1)
+                return dist[x][y];
+
+            for (int d = 0; d < 4; d++) {
+                int adjX = x + rowD[d];
+                int adjY = y + colD[d];
+                int cost = grid[x][y] != (d + 1);
+
+                if (0 <= adjX && adjX < rows && 0 <= adjY && adjY < cols) {
+                    if ((dist[x][y] + cost) < dist[adjX][adjY]) {
+                        dist[adjX][adjY] = dist[x][y] + cost;
+
+                        if (cost)
+                            nodes.emplace_back(adjX, adjY);
+                        else
+                            nodes.emplace_front(adjX, adjY);
+                    }
+                }
+            }
+        }
+
+        return dist[rows - 1][cols - 1];
+    }
+};
