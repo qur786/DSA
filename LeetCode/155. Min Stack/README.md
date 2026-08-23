@@ -1,5 +1,7 @@
 # 155. Min Stack
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p>
