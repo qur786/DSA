@@ -1,5 +1,7 @@
 # 503. Next Greater Element II
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Given a circular integer array <code>nums</code> (i.e., the next element of <code>nums[nums.length - 1]</code> is <code>nums[0]</code>), return <em>the <strong>next greater number</strong> for every element in</em> <code>nums</code>.</p>
