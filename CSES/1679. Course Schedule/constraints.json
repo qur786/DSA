@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "problem_number": 1679,
+  "title": "Course Schedule",
+  "source_url": "https://cses.fi/problemset/task/1679",
+  "limits": {
+    "time_seconds": 1.0,
+    "memory_mb": 512
+  },
+  "input": "The first input line has two integers n and m: the number of courses and requirements. The courses are numbered 1,2,…,n.\n\nAfter this, there are m lines describing the requirements. Each line has two integers a and b: course a has to be completed before course b.",
+  "output": "Print an order in which you can complete the courses. You can print any valid order that includes all the courses.\n\nIf there are no solutions, print \"IMPOSSIBLE\".",
+  "constraints": "- 1 ≤ n ≤ 10⁵\n\n- 1 ≤ m ≤ 2 · 10⁵\n\n- 1 ≤ a,b ≤ n",
+  "sections": {
+    "Input": "The first input line has two integers n and m: the number of courses and requirements. The courses are numbered 1,2,…,n.\n\nAfter this, there are m lines describing the requirements. Each line has two integers a and b: course a has to be completed before course b.",
+    "Output": "Print an order in which you can complete the courses. You can print any valid order that includes all the courses.\n\nIf there are no solutions, print \"IMPOSSIBLE\".",
+    "Constraints": "- 1 ≤ n ≤ 10⁵\n\n- 1 ≤ m ≤ 2 · 10⁵\n\n- 1 ≤ a,b ≤ n",
+    "Example": "Input:\n\n```\n5 3\n1 2\n3 1\n4 5\n\n```\n\nOutput:\n\n```\n3 4 1 5 2\n\n```"
+  }
+}
