@@ -1,5 +1,7 @@
 # 71. Simplify Path
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>You are given an <em>absolute</em> path for a Unix-style file system, which always begins with a slash <code>'/'</code>. Your task is to transform this absolute path into its <strong>simplified canonical path</strong>.</p>
