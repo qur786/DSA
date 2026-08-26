@@ -29,7 +29,7 @@
       </td>
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-GeeksforGeeks-2F8D46?style=for-the-badge&logo=GeeksforGeeks&logoColor=white" alt="GeeksforGeeks"/><br>
-        <h2>💻 11</h2>
+        <h2>💻 12</h2>
       </td>
       <td align="center" width="220">
         <img src="https://img.shields.io/badge/-CSES-1A2C34?style=for-the-badge&logo=codeforces&logoColor=white" alt="CSES"/><br>
@@ -38,7 +38,7 @@
     </tr>
   </table>
   <br>
-  <img src="https://img.shields.io/badge/Total_Problems_Solved-193-00599C?style=for-the-badge&logo=codeforces&logoColor=white" alt="Total Solved" />
+  <img src="https://img.shields.io/badge/Total_Problems_Solved-194-00599C?style=for-the-badge&logo=codeforces&logoColor=white" alt="Total Solved" />
 </div>
 <!-- dsa-counts-end -->
 
