@@ -5,7 +5,11 @@
 ## Description
 
 <p><span style="font-size: 18.6667px;">An alien language uses the lowercase English alphabet, but the order of its letters is unknown. You are given an array of strings <strong>words[]</strong> that is claimed to be sorted lexicographically according to the rules of the alien language.</span></p>
-<p><span style="font-size: 18.6667px;">Determine the order of the letters in the alien alphabet. If a valid ordering exists, return a string containing all unique letters in lexicographical order according to the alien language. Otherwise, return an empty string. </span></p>
+<p><span style="font-size: 18.6667px;">Determine the order of the letters in the alien alphabet. </span></p>
+<ul>
+<li><span style="font-size: 18.6667px;">If a valid ordering exists, return a string containing all unique letters in lexicographical order according to the alien language. </span></li>
+<li><span style="font-size: 18.6667px;">Otherwise, return an empty string. </span></li>
+</ul>
 <p><span style="font-size: 18.6667px;">If a string </span><span style="font-size: 18.6667px;">s1</span><span style="font-size: 18.6667px;"> is lexicographically smaller than a string </span><span style="font-size: 18.6667px;">s2</span><span style="font-size: 18.6667px;">, and the first position at which they differ contains letter </span><span style="font-size: 18.6667px;">a</span><span style="font-size: 18.6667px;"> in s1 and letter </span><span style="font-size: 18.6667px;">b</span><span style="font-size: 18.6667px;"> in s2, then a must appear before b in the alien alphabet.</span></p>
 <p><span style="font-size: 18.6667px;">Note: The driver code prints true if the returned order is valid; otherwise, it prints false.</span></p>
 <p><strong style="font-size: 14pt;">Examples:</strong></p>
