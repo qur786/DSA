@@ -1,6 +1,6 @@
 # Nth Fibonacci Number
 
-**Difficulty:** Easy
+**Difficulty:** Basic
 
 ## Description
 
