@@ -1,0 +1,24 @@
+class Solution {
+private:
+    int createFib(int n, vector<int>& fb) {
+        if (fb[n] != -1)
+            return fb[n];
+
+        fb[n] = createFib(n - 1, fb) + createFib(n - 2, fb);
+
+        return fb[n];
+    }
+
+public:
+    int fib(int n) {
+        if (n == 0)
+            return 0;
+        if (n == 1)
+            return 1;
+        vector<int> fb(n + 1, -1);
+        fb[0] = 0;
+        fb[1] = 1;
+
+        return createFib(n, fb);
+    }
+};
