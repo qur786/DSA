@@ -1,5 +1,7 @@
 # 394. Decode String
 
+**Difficulty:** Medium
+
 ## Description
 
 <p>Given an encoded string, return its decoded string.</p>
