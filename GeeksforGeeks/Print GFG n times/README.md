@@ -1,6 +1,6 @@
 # Print GFG n times
 
-**Difficulty:** Easy
+**Difficulty:** Basic
 
 ## Description
 
