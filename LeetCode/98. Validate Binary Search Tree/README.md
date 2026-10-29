@@ -9,7 +9,7 @@
 <p>A <strong>valid BST</strong> is defined as follows:</p>
 
 <ul>
-	<li>The left <span data-keyword="subtree" class=" cursor-pointer relative text-dark-blue-s text-sm"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_a0_" data-state="closed" class="">subtree</button></span> of a node contains only nodes with keys&nbsp;<strong>strictly less than</strong> the node's key.</li>
+	<li>The left <span data-keyword="subtree" class=" cursor-pointer relative text-dark-blue-s text-sm"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_t_" data-state="closed" class="">subtree</button></span> of a node contains only nodes with keys&nbsp;<strong>strictly less than</strong> the node's key.</li>
 	<li>The right subtree of a node contains only nodes with keys <strong>strictly greater than</strong> the node's key.</li>
 	<li>Both the left and right subtrees must also be binary search trees.</li>
 </ul>
